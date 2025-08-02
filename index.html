@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhianca Paulucci | Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'EB Garamond', serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .logo {
+      max-height: 390px;
+      width: auto;
+      margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .titulo, .subtitulo {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .titulo {
+      font-size: 3rem;
+    }
+
+    .subtitulo {
+      font-size: 1.5rem;
+      color: #ccc;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      padding: 0 2rem 2rem;
+      justify-items: center;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 250px; /* Altura fixa para padronizar */
+      object-fit: cover; /* Corta e encaixa proporcionalmente */
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .contato {
+      padding: 3rem 2rem;
+      text-align: center;
+      background-color: #111;
+    }
+
+    .contato form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contato input, .contato textarea {
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+      background-color: #222;
+      color: #fff;
+    }
+
+    .contato button {
+      padding: 0.8rem;
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contato button:hover {
+      background-color: transparent;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="Bhianca Paulucci" class="logo" />
+    <nav>
+      <a href="#galeria">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="galeria" class="titulo">Portfólio</h2>
+
+    <!-- Álbum 1 -->
+    <h3 class="subtitulo">Ensaio Externo</h3>
+    <section class="galeria">
+      <img src="fotos/foto1.jpg" alt="Editorial 1" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto2.jpg" alt="Editorial 2" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto3.jpg" alt="Editorial 3" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto4.jpg" alt="Ensaio 1" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto5.jpg" alt="Ensaio 2" onclick="abrirLightbox(this.src)" />
+
+
+    </section>
+
+    <!-- Álbum 2 -->
+    <h3 class="subtitulo">Eventos</h3>
+    <section class="galeria">
+      <img src="fotos/foto7.jpg" alt="Casamento 1" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto8.jpg" alt="Casamento 2" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto6.jpg" alt="Ensaio 3" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto13.jpg" alt="Ensaio 3" onclick="abrirLightbox(this.src)" />
+    </section>
+
+    <!-- Álbum 3 -->
+    <h3 class="subtitulo">Ensaio Profissional</h3>
+    <section class="galeria">
+      
+      <img src="fotos/foto9.jpg" alt="Casamento 3" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto10.jpg" alt="Casamento 4" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto11.jpg" alt="Casamento 5" onclick="abrirLightbox(this.src)" />
+      <img src="fotos/foto12.jpg" alt="Casamento 6" onclick="abrirLightbox(this.src)" />
+    </section>
+
+    <section id="contato" class="contato">
+      <h2>Fale Comigo</h2>
+      <form id="formulario">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="mensagemSucesso" style="display:none;">Mensagem enviada com sucesso! 💌</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bhianca Paulucci | Todos os direitos reservados</p>
+  </footer>
+
+  <div id="lightbox" onclick="fecharLightbox()">
+    <img id="imgAmpliada" />
+  </div>
+
+  <script>
+    function abrirLightbox(src) {
+      document.getElementById('imgAmpliada').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function fecharLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    document.getElementById("formulario").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("mensagemSucesso").style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
